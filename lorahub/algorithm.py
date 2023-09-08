@@ -143,6 +143,7 @@ def default_l1_regularization(weights):
     return 0.05 * sum_of_squares
 
 def get_score(weights, model, cache, example_dataset, batch_size, get_loss, get_regular):
+    # weights是Compose阶段各个LoRA模块的权重
     # the composed lora state dict
     final_state_dict = {}
     # module list is the list
