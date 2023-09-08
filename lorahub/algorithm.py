@@ -8,7 +8,7 @@ from tqdm import tqdm
 import pandas as pd
 import numpy
 import random
-import nevergrad as ng
+import nevergrad as ng  # 无梯度优化
 from peft.utils.save_and_load import set_peft_model_state_dict, get_peft_model_state_dict
 from peft import PeftModel, PeftConfig
 from functools import partial
@@ -40,10 +40,10 @@ def load_base_model_and_lora_modules(lora_module_list: List[str], model_name_or_
         raise Exception(f'{default_peft_model_id} is unable to load into the model {model_name_or_path}')
         
     peft_model = peft_model.to(device)
-    peft_model.eval()
+    peft_model.eval()  # 评估模式
 
     print("> Begin to load lora modules")
-    cache = {}
+    cache = {}  # key: lora_module, value: model_state_dict
 
     first_dict = None
 
@@ -57,6 +57,7 @@ def load_base_model_and_lora_modules(lora_module_list: List[str], model_name_or_
         # check whether the LoRA can be merged into one 
         try:
             # detect whether the arch is the same
+            # arch应该指architecture
             for key in first_dict.keys():
                 assert first_dict[key].shape == cache[peft_model_id][key].shape
         except:
