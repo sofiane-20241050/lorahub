@@ -279,9 +279,9 @@ def lorahub_learning(lora_module_list: List[str],
         upper=[1.5] * number_of_loras,
         lower=[-1.5] * number_of_loras,
     )
-    optimizer = ng.optimizers.NGOpt(parametrization=instrum, budget=max_inference_step)
+    optimizer = ng.optimizers.NGOpt(parametrization=instrum, budget=max_inference_step)  # 无梯度优化方法
     print("> Begin to perform gradient-free optimization ...")
-    recommendation = optimizer.minimize(get_score_partial, verbosity=1)
+    recommendation = optimizer.minimize(get_score_partial, verbosity=1)  # lora模块的weights
     final_lora = get_final_weights(recommendation.value, lora_module_list, cache)
     # set the final weights
     set_peft_model_state_dict(model, final_lora)
