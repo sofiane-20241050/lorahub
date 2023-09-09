@@ -193,6 +193,7 @@ def lorahub_inference(example_inputs: List[str],
                       example_outputs: List[str]=None):
     
     def accuracy_score(outputs, ground_truths):
+        # outputs: predicted, ground_truths: true(real)
         correct = 0
         total = 0
         for output, truth in zip(outputs, ground_truths):
