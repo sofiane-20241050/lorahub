@@ -5,7 +5,7 @@ import random
 
 def get_examples_for_learning():
     """
-    时间推断任务
+    用于时间推断任务的few-shot
     Get a few examples to learn to compose given LoRA modules
     """
     return [
