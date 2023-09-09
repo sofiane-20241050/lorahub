@@ -99,3 +99,7 @@ If our work is useful for you, please consider citing our paper:
     primaryClass={cs.CL}
 }
 ```
+
+# Knowledge
+### shutil
+shutil 是 Python 中的高级文件操作模块，与os模块形成互补的关系，os主要提供了文件或文件夹的新建、删除、查看等方法，还提供了对文件以及目录的路径操作。shutil模块提供了移动、复制、 压缩、解压等操作，恰好与os互补，共同一起使用，基本能完成所有文件的操作。是一个非常重要的模块。
