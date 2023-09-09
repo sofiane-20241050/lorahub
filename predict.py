@@ -6,7 +6,7 @@ import shutil
 import random
 from typing import List
 import torch
-from cog import BasePredictor, Input, Path, BaseModel
+from cog import BasePredictor, Input, Path, BaseModel  # cog: containers for machine learning
 
 from lorahub.algorithm import (
     lorahub_learning,
