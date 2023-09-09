@@ -5,6 +5,7 @@ import random
 
 def get_examples_for_learning():
     """
+    时间推断任务
     Get a few examples to learn to compose given LoRA modules
     """
     return [
