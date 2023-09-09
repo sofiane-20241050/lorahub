@@ -7,6 +7,10 @@ import random
 from random import shuffle
 
 
+"""
+采用三种学习方式在BBH基准测试上进行测试
+"""
+# lorahub_inference返回预测结果与准确率
 def evaluate_flan_results_zero_shot(folder, flan_model_name):
     sub_dirs = os.listdir(folder)
 
